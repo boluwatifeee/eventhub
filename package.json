@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/boluwatifeee/eventhub#readme",
   "dependencies": {
+    "date-fns": "^4.1.0",
+    "date-fns-tz": "^3.2.0",
     "express": "^5.1.0"
   },
   "devDependencies": {

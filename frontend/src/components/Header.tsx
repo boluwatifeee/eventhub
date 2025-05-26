@@ -1,4 +1,3 @@
-import { Link } from '@tanstack/react-router'
 import { AvatarFallback } from '@radix-ui/react-avatar'
 import { BellIcon } from 'lucide-react'
 import { Button } from './ui/button'
@@ -10,15 +9,27 @@ import {
   DropdownMenuTrigger,
 } from './ui/dropdown-menu'
 import { Avatar } from './ui/avatar'
+import { SidebarTrigger } from './ui/sidebar'
+
+// type HeaderProps {
+//   title:
+// }
 
 export default function Header() {
   return (
-    <header className="p-2 flex justify-between items-center gap-2 bg-white text-black border-b border-[#E5E4E2]">
-      <div>
-        <h2 className="text-xl font-bold">Dashboard</h2>
-        <p className="text-[#808080]">Manage your events and track RSVPs</p>
+    <header className="py-[16px] px-[24px] flex justify-between items-center gap-2 bg-white text-black border-b border-[#E5E4E2] w-full">
+      <div className="flex gap-x-2">
+        <SidebarTrigger className="-ml-1" />
+        <div>
+          <h2 className="text-xs-size font-[var(--font-weight-bold)]">
+            Dashboard
+          </h2>
+          <p className="text-[#808080] text-x8-size">
+            Manage your events and track RSVPs
+          </p>
+        </div>
       </div>
-      <div className="flex gap-x-2 items-center">
+      <div className="flex gap-x-4 items-center">
         <Input placeholder="Search events..." />
         <Button>
           <BellIcon />

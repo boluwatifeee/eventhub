@@ -1,17 +1,19 @@
 import { Outlet, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
-
 import Header from '../components/Header'
-import Footer from '@/components/Footer'
+import { SidebarProvider } from '@/components/ui/sidebar'
+import { AppSidebar } from '@/components/AppSidebar'
 
 export const Route = createRootRoute({
   component: () => (
-    <>
-      <Header />
+    <SidebarProvider>
+      <AppSidebar />
 
-      <Outlet />
+      <main>
+        <Header />
+        <Outlet />
+      </main>
       <TanStackRouterDevtools />
-      <Footer />
-    </>
+    </SidebarProvider>
   ),
 })
